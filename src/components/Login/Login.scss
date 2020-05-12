@@ -1,0 +1,19 @@
+@import '../../generales/sass/vars';
+@import '../../generales/sass/mixins';
+
+.loginScreen{
+    @include flex;
+    @include imagen;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $zloader;
+    user-select: none;
+    .container{
+        @include container;
+        padding: 20px 0;
+        border: 1px solid red;
+    }
+}

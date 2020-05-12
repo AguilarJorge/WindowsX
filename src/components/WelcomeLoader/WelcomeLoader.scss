@@ -1,0 +1,72 @@
+@import '../../generales/sass/vars';
+@import '../../generales/sass/mixins';
+
+@keyframes rotate {
+    100% {transform: rotate(360deg)}
+}
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+    }
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+    }
+}
+@keyframes color {
+    100%, 0% {stroke: #f25022}
+    40% {stroke: #7fba00}
+    66% {stroke: #00a4ef}
+    80%, 90% {stroke: #ffb900}
+}
+
+.loaderScreen{
+    @include flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $negro;
+    z-index: $zloader;
+    user-select: none;
+    cursor: none;
+    .container{
+        @include container;
+        @include flex(column);
+        .loader{
+            .loaderCirc{
+                width: 150px;
+                height: 150px;
+                animation: rotate 2s linear infinite;
+                .path{
+                    stroke-dasharray: 1, 200;
+                    stroke-dashoffset: 0;
+                    stroke-linecap: round;
+                    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+                }
+            }
+        }
+        .logo{
+            @include flex;
+            position: fixed;
+            bottom: 20px;
+            color: $blanco;
+            .sq{
+                @include flex;
+                width: 24px;
+                margin-right: 5px;
+                .wsq{
+                    width: 10px;
+                    height: 10px;
+                    margin: 1px;
+                }
+            }
+        }
+    }
+}
