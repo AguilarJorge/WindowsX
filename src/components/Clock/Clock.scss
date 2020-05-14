@@ -1,0 +1,15 @@
+@import '../../generales/sass/vars';
+@import '../../generales/sass/mixins';
+
+.clock{
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    color: $blanco;
+    font-size: 50px;
+    font-weight: 300;
+    .hora{
+        font-size: 100px;
+        font-weight: 100;
+    }
+}

@@ -11,9 +11,4 @@
     height: 100%;
     z-index: $zloader;
     user-select: none;
-    .container{
-        @include container;
-        padding: 20px 0;
-        border: 1px solid red;
-    }
 }
